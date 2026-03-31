@@ -1,0 +1,2 @@
+console.log('Iran War Analysis Frontend loaded');function formatArticleText(text){console.log('Article text loaded: '+text.substring(0,50)+'...')}
+document.addEventListener('DOMContentLoaded',function(){const cards=document.querySelectorAll('.article-card');cards.forEach(card=>{card.addEventListener('click',function(){console.log('Article card clicked')})})})

@@ -1,0 +1,41 @@
+<IfModule mod_rewrite.c>
+    Options +FollowSymlinks
+    RewriteEngine On
+    
+    # Allow access to auth.php directly or via auth.html
+    RewriteRule ^auth\.php$ auth.php [L]
+    RewriteRule ^auth\.html$ auth.php [L]
+    RewriteRule ^auth$ auth.php [L]
+    
+    RewriteRule ^admin-dashboard.html$ dashboard.php [L]
+    RewriteRule ^style.css$ style.css [L]
+    
+    RewriteRule ^page-liste.html$ page/liste.php [L]
+    RewriteRule ^page-ajouter.html$ page/ajouter.php [L]
+    RewriteRule ^page-modifier-([0-9]+).html$ page/modifier.php?id=$1 [L]
+
+    RewriteRule ^contenu-liste.html$ contenu/liste.php [L]
+    RewriteRule ^contenu-ajouter.html$ contenu/ajouter.php [L]
+    RewriteRule ^contenu-modifier-([0-9]+).html$ contenu/modifier.php?id=$1 [L]
+    RewriteRule ^contenu-supprimer-([0-9]+).html$ contenu/supprimer.php?id=$1 [L]
+
+    RewriteRule ^image-ajouter.html$ image/ajouter.php [L]
+    RewriteRule ^image-supprimer-([0-9]+).html$ image/supprimer.php?id=$1 [L]
+
+    RewriteRule ^tag-liste.html$ tag/liste.php [L]
+    RewriteRule ^tag-ajouter.html$ tag/ajouter.php [L]
+
+    RewriteRule ^utilisateur-liste.html$ utilisateur/liste.php [L]
+    RewriteRule ^utilisateur-ajouter.html$ utilisateur/ajouter.php [L]
+    RewriteRule ^utilisateur-modifier-([0-9]+).html$ utilisateur/modifier.php?id=$1 [L]
+    RewriteRule ^utilisateur-supprimer-([0-9]+).html$ utilisateur/supprimer.php?id=$1 [L]
+
+    RewriteRule ^logout.html$ logout.php [L]
+    
+    RewriteRule ^index.html$ index.php [L]
+    RewriteRule ^login.html$ auth.php [L]
+    
+    # Don't rewrite existing files and directories
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+</IfModule>
