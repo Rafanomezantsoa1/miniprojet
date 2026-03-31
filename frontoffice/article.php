@@ -119,7 +119,7 @@ $subtitle_tags = !empty($subtitle['tags']) ? explode(',', $subtitle['tags']) : [
             <article class="article-detail">
                 <?php if (!empty($subtitle['image'])): ?>
                     <div class="article-image-header">
-                        <img src="<?php echo htmlspecialchars($subtitle['image']); ?>" alt="<?php echo htmlspecialchars($subtitle['texte']); ?>">
+                        <img src="<?php echo htmlspecialchars($subtitle['image']); ?>" alt="<?php echo htmlspecialchars($subtitle['texte']); ?>" loading="lazy">
                     </div>
                 <?php endif; ?>
                 
@@ -144,7 +144,7 @@ $subtitle_tags = !empty($subtitle['tags']) ? explode(',', $subtitle['tags']) : [
                             <section class="paragraph-section">
                                 <?php if (!empty($para['image'])): ?>
                                     <figure class="paragraph-figure">
-                                        <img src="<?php echo htmlspecialchars($para['image']); ?>" alt="Illustration">
+                                        <img src="<?php echo htmlspecialchars($para['image']); ?>" alt="Illustration" loading="lazy">
                                     </figure>
                                 <?php endif; ?>
                                 

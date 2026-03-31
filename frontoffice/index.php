@@ -88,7 +88,7 @@ function renderMainTitle($title, $page_images) {
     <div class="hero-section">
         <?php if (!empty($hero_images)): ?>
             <div class="hero-image">
-                <img src="<?php echo htmlspecialchars(trim($hero_images[0])); ?>" alt="Image principale">
+                <img src="<?php echo htmlspecialchars(trim($hero_images[0])); ?>" alt="Image principale" loading="lazy">
             </div>
         <?php endif; ?>
         <h1 class="page-main-title"><?php echo htmlspecialchars($title['texte']); ?></h1>
@@ -116,7 +116,7 @@ function renderSubtitleCards($subtitles, $page_images, $all_contents) {
         <div class="subtitle-card">
             <?php if (!empty($subtitle_images)): ?>
                 <div class="subtitle-card-image">
-                    <img src="<?php echo htmlspecialchars(trim($subtitle_images[0])); ?>" alt="Image">
+                    <img src="<?php echo htmlspecialchars(trim($subtitle_images[0])); ?>" alt="Image" loading="lazy">
                 </div>
             <?php else: ?>
                 <div class="subtitle-card-placeholder">📄</div>
@@ -149,7 +149,7 @@ function renderParagraphsForSubtitle($subtitle_id, $all_paragraphs, $page_images
         $para_images = isset($page_images[$para['id_contenu']]) ? $page_images[$para['id_contenu']] : [];
         $html .= '<div class="paragraph-item">';
         if (!empty($para_images)) {
-            $html .= '<div class="paragraph-image"><img src="' . htmlspecialchars(trim($para_images[0])) . '" alt="Image"></div>';
+            $html .= '<div class="paragraph-image"><img src="' . htmlspecialchars(trim($para_images[0])) . '" alt="Image" loading="lazy"></div>';
         }
         $html .= '<p class="paragraph-text">' . htmlspecialchars($para['texte']) . '</p>';
         $html .= '</div>';
